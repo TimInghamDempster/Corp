@@ -40,7 +40,7 @@ namespace LanguageNet5
 
             LLVM.WriteBitcodeToFile(module, "test.bc");
 
-            var clang = Process.Start(@"c:\program files\llvm\bin\clang.exe", "test.bc -o test.exe");
+            var clang = Process.Start("clang", "test.bc -o test.exe");
             clang.WaitForExit();
         }
     }
